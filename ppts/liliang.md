@@ -2,31 +2,36 @@ title: vue介绍
 speaker: 李亮
 url: https://github.com/zkyeu
 transition: slide3
-files: /js/demo.js,/css/demo.css,/js/zoom.js
+files: /js/vue.js,/css/vue.css,/js/zoom.js
 theme: moon
 usemathjax: yes
 
 [slide]
 # 前端框架Vuejs
 
-<small>作业帮-直播课研发团队-教师端  李亮</small>
+<small><span class="blue">作业帮-直播课研发团队-教师端  李亮</span></small>
 
-[slide]
+
+<small><span>2017.07.05</span></small>
+
+[slide3]
 ##不学自知，不问自晓，古今行事，未之有也
 ----
-不用学习就知道,不用提问就明白,这种事无论古今都是绝无仅有的.教导我们要勤奋,好学,不懂就问 {:&.rollIn}
+<span class="yellow3">不用学习就知道,不用提问就明白,这种事无论古今都是绝无仅有的.教导我们要勤奋,好学,不懂就问</span>{:&.rollIn}
 
 
 [slide]
 # 主流框架
-
+[note]
+<img src="/img/ifram.jpg" style="width: 100%;">
+[/note]
 [slide]
 <img src="/img/all.png">
 ----
-*  Knockout|Polymer|Jquery[Zepto]|Riot|Dojo|Avalon等等 {:&.rollIn}
+*  Knockout|Polymer|Jquery[Zepto]|Riot|Dojo|*Avalon*等等 {:&.rollIn}
 * 纯模板引擎：最少的就是纯模板引擎，只管状态到界面的映射
 * React和Vue：两者都专注只做状态到界面映射，以及组件
-* Backbone：更多一些架构指导
+* Backbone：更多一些架构指导，不是数据双向绑定
 * Angular：做的事情多，有自己的路由,生态体系
 * Ember：相比Angular，Ember做得就更加彻底，它会将一切都帮你设计好打包好，你就开箱用就可以了
 * Meteor：Meteor只是一个极端，它是从前到后全都包含，从前端到数据层到数据库，全都帮你打包好
@@ -35,17 +40,27 @@ usemathjax: yes
 [slide]
 ----
 * React和Vue有一个共同特点，都有各自的配套工具，核心只解决一个很小的问题 {:&.rollIn}
-* 有生态圈及配套的可选工具，逐个加进来，就可以组合成非常强大的栈[渐进式]
+* 有生态圈及配套的可选工具，逐个加进来，就可以组合成非常强大的栈[*渐进式*]
 * <img src="/img/all2.png">
 
 
 [slide]
-# MVC & MVVM
+# *MVC* & MVVM
 * 软件中最核心的，最基本的东西是什么? 是数据。我们写的所有代码，都是围绕数据的 {:&.rollIn}
 * 围绕着数据的产生、修改等变化，出现了业务逻辑
 * 围绕着数据的显示，出现了不同的界面技术
 
 [slide]
+[note]
+##MVC优点
+----
+*   由于MVC很好的分离了视图层和业务层，所以它具有以下优点
+*  耦合性低
+*   开发速度快
+*   可维护性高
+*   没有控件的概念，对html没有封装，易于理解
+*  和其它平台(java, php)等更加相似。便于人才获取
+[/note]
 <img src="/img/mvc.png" style="width: 500px;">
 ----
 * View 传送指令到 Controller {:&.rollIn}
@@ -57,6 +72,9 @@ usemathjax: yes
 * > 一发而动全身。数据、显示不分离！
 
 [slide]
+[note]
+<img src="/img/vue2.png" style="width: 100%;">
+[/note]
 <img src="/img/mvvm.png" style="width: 500px;">
 ----
 * 双向绑定,V的变动,自动反映在VM,反之亦然,M数据的变动,也自动展示给页面显示 {:&.rollIn}
@@ -72,17 +90,16 @@ usemathjax: yes
 
 
 [slide]
-# Vue发展史
+# Vue发展简史
 ----
 * 2014年3月，Vue.js 0.10 开源发布[官方定位是视图管理]  {:&.zoomIn}
 * 2014年10月，大范围使用
-* 2015年12月 NPM下载量: 382,184, ~52k每月
+* 2015年 NPM下载量: 382,184, ~52k每月
 * 2016年4月，Vue2版本发布[官方定位是渐进式框架]
 * 2016年5月，vuejs的starts数超过angular
 * 2016年12月 NPM下载量: 1,943,567(比2015, +300%)
-* 2017年1月 vue-devtools 发布[调试]
 * 2017年2月 版本2.2发布[webpack结合]
-* 2017年6月 github star 全球排名12[7🈷️3日 第11]
+* 2017年6月 github star 全球排名12[7月3日 *第11*]
 * <img src="/img/angular.png">
 * <img src="/img/vue.png">
 
@@ -90,22 +107,42 @@ usemathjax: yes
 
 [slide]
 ## 为什么选择Vue
-----
-* 易用 {:&.rollIn}
+
+[slide data-transition="vertical3d"]
+<img src="/img/speed.png" style="width: 100%">
+
+[slide]
+# 渲染 10,000 个列表项 100次
+<small style="font-size: 1.2rem;">Chrome52 2014年MacBook Air,每个参照项目分开运行20次</small>
+---
+| Vue | React
+:-------|:------:|-------
+Fastest| 23ms   | 63ms
+Median | 42ms  |  81ms
+Average| 51ms  |  94ms
+95th Perc. | 73ms  |  164ms
+Slowest | 343ms |  453ms
+
+
+
+[slide]
+
+* *易用* {:&.rollIn}
 * > 已经会了HTML,CSS,JavaScript？阅读指南即可构建
-* 灵活
+* *灵活*
 * > 简单小巧，渐进式技术栈，足以应付任何规模的应用
-* 性能
+* *性能*
 * > 17kb大小 超快虚拟DOM
 * <img src="/img/v1.png" style="width:300px;height:260px;margin-top: 20px;"> <img src="/img/v2.png"  style="width:300px;height:260px;">
 
 [slide]
-# Vue应用情况 {:&.zoomIn}
-<img src="/img/logo.jpg">
+# Vue应用情况
+----
+<img src="/img/logo.jpg"> {:&.zoomIn}
 
 
 [slide]
-# 基本语法和样式演示
+# 基本语法
 ----
 * 生命周期 {:&.bounceIn}
 * 安装
@@ -117,8 +154,9 @@ usemathjax: yes
 * ...
 
 [slide]
-# 生命周期 {:&.rollIn}
-<img src="/img/lifecycle.png" style="width:500px;margin: 0 auto;">
+# 生命周期 
+----
+<img src="/img/lifecycle.png" style="width:500px;margin: 0 auto;"> {:&.rollIn}
 
 [slide]
 # 安装
@@ -129,7 +167,9 @@ usemathjax: yes
 方式二：script直接引入
 <pre><code class="javascript">&lt;script src="./vue.js"&gt;&lt;/script&gt;</code></pre>
 
-###基本结构
+
+[slide]
+#基本结构
   <pre><code class="javascript">
     &lt;meta charset="UTF-8"&gt;
     &lt;script src="js/vue.js"&gt;&lt;/script&gt;
@@ -183,8 +223,8 @@ usemathjax: yes
 [slide]
 插值
 ----
-<pre><code class="markdown">msg: '我是vue文字'</code></pre>
-<pre><code class="markdown">&lt;span&gt;Message: {{ msg }}&lt;/span&gt;</code></pre>
+<pre><code class="markdown">msg: '作业帮'</code></pre>
+<pre><code class="markdown">&lt;span&gt;Message: *{{ msg }}*&lt;/span&gt;</code></pre>
 数据绑定使用 “Mustache” 语法（双大括号）的文本插值.
 
 [slide]
@@ -232,9 +272,9 @@ usemathjax: yes
 
 
 [slide]
-#基本语法--组件(Component)  {:&.zoomIn}
-Vue.js 最强大的功能之一
+#基本语法--组件(Component)
 ----
+Vue.js 最强大的功能之一
 <img src="/img/com.png" style="width:500px;margin: 0 auto;"> 
 
 [slide]
@@ -261,29 +301,46 @@ Vue.js 最强大的功能之一
 </code></pre>
 
 [slide]
-#基本语法--事件&通信
-----
-##监听事件(v-on)
-> click dbclick onmouseover onmouseenter onfocus onblur
-====
-##事件修饰
-<pre><code class="JavaScript">/*阻止单击事件冒泡*/
-&lt;a v-on:click.stop="doThis"&gt;&lt;/a&gt;
-/*提交事件不再重载页面*/
-&lt;form v-on:submit.prevent="onSubmit"&gt;&lt;/form&gt;
-/*修饰符可以串联*/
-&lt;a v-on:click.stop.prevent="doThat"&gt;&lt;/a&gt;
-/*只有修饰符*/
-&lt;form v-on:submit.prevent&gt;&lt;/form&gt;
-/*添加事件侦听器时使用事件捕获模式*/
-&lt;div v-on:click.capture="doThis"&gt;...&lt;/div&gt;
-/*只当事件在该元素本身（而不是子元素）触发时触发回调*/
-&lt;div v-on:click.self="doThat"&gt;...&lt;div&gt;
+[note]
+* 阻止单击事件冒泡
+<pre><code class="JavaScript">&lt;a v-on:click.stop="doThis"&gt;&lt;/a&gt;</code></pre>
+
+* 添加事件侦听器时使用事件捕获模式
+<pre><code class="JavaScript">&lt;div v-on:click.capture="doThis"&gt;...&lt;/div&gt;
+</code></pre>
+
+* 只当事件在该元素本身（而不是子元素）触发时触发回调<pre><code class="JavaScript">&&lt;div v-on:click.self="doThat"&gt;...&lt;/div&gt;
+</code></pre>
+
+
+* 只有在 keyCode 是 13 时调用 vm.submit()
+<pre><code class="JavaScript">&lt;input v-on:keyup.13="submit"&gt;
+&lt;input v-on:keyup.enter="submit"&gt;
+&lt;input @keyup.enter="submit&gt;
+</code></pre>
+
+* Ctrl + Click
+<pre><code class="JavaScript">&lt;div @click.ctrl="doSomething">Do something&lt;/div&gt;
+</code></pre>
+
+[/note]
+
+#基本语法--事件
+
+<pre><code class="JavaScript">
+#事件修饰
+.stop .prevent .capture .self.once
+#键值修饰符
+.enter.tab.delete.esc.space.up.dow.left.right
+#修饰键
+.ctrl.alt.shift.meta
+#滑鼠按键修饰符
+.left.right.middle
 </code></pre>
 
 
 [slide]
-#通信
+#基本语法-通信
 
 [slide]
 <img src="/img/com.jpg" style="width:500px;margin: 0 auto;">
@@ -405,26 +462,36 @@ created: function () {
 * Vue-cli
 * ...
 
-[slide]
+[slide  data-transition="vertical3d"]
 #Vue实例
 ----
-* 豆瓣电影 https://github.com/Recklesslmz/vue-douban.git  {:&.zoomIn}
-* <a href="https://hj0503.github.io/vue-buy-tickets/#/home/trainticket">火车票</a> https://github.com/hj0503/vue-buy-tickets.git
-* <a href="https://zsqio.github.io/vuex-meitu-demo/index.html#/">美图官网</a> https://github.com/zsqio/vue-meitu.git
-* 简书 https://github.com/jiayisheji/jianshu.git
-* <a href="https://luxroid.com/lianjia/#/" target="_blank">链家</a> https://github.com/mixihome/lianjia.git
-* 滴滴出行 https://github.com/uncleze2017/Imitation-DIDI-project.git
-*  <a href="https://yuxiuting.github.io/qqMusic/#/" target="_blank">QQ音乐</a> https://github.com/yuxiuting/Vue-qqMusic.git
-* <a href="http://ntrmusic.duapp.com/#/home/newmusic/" target="_blank">网易云音乐</a> https://github.com/lichddd/ntrmusic.git
-* QQ https://github.com/jiangqizheng/vue2-MiniQQ.git
-* <a href='http://zhaohaodang.com:8888/' target="_blank">微信</a> https://github.com/zhaohaodang/vue-WeChat.git
-
+* 豆瓣电影 <span class="example">https://github.com/Recklesslmz/vue-douban.git</span>  {:&.zoomIn}
+* <a href="https://juejin.im/post/58fed39cb123db260cb30587">今日头条</a> <span class="example">https://github.com/hcy1996/vue-toutiao.git</span>
+* <a href="https://zsqio.github.io/vuex-meitu-demo/index.html#/">美图官网</a> <span class="example">https://github.com/zsqio/vue-meitu.git</span>
+* 简书 <span class="example">https://github.com/jiayisheji/jianshu.git</span>
+* <a href="https://luxroid.com/lianjia/#/" target="_blank">链家</a> <span class="example">https://github.com/mixihome/lianjia.git</span>
+* 滴滴出行 <span class="example">https://github.com/uncleze2017/Imitation-DIDI-project.git</span>
+*  <a href="https://yuxiuting.github.io/qqMusic/#/" target="_blank">QQ音乐</a> <span class="example">https://github.com/yuxiuting/Vue-qqMusic.git</span>
+* <a href="http://ntrmusic.duapp.com/#/home/newmusic/" target="_blank">网易云音乐</a> <span class="example">https://github.com/lichddd/ntrmusic.git</span>
+* QQ <span class="example">https://github.com/jiangqizheng/vue2-MiniQQ.git</span>
+* <a href='http://zhaohaodang.com:8888/' target="_blank">微信</a> <span class="example">https://github.com/zhaohaodang/vue-WeChat.git</span>
+* <a href="http://xurenjie.cn:3000/vue-tencent-sports/index.html#/competition/recommend">腾讯体育 <span class="example">https://github.com/renjie1996/tencent-sports.git</span>
+* <a href="https://sukura7.github.io/vue-xianyu-demo/index.html#/">阿里闲鱼 <span class="example">https://github.com/Sukura7/vue-ali-xianyu.git</span>
 
 
 [slide]
+## 音乐站实例
+----
+<iframe data-src="http://ntrmusic.duapp.com/#/home/newmusic/" src="about:blank;"></iframe>
+
+[slide]
+## 微信实例
+----
+<iframe data-src="http://zhaohaodang.com:8888/" src="about:blank;"></iframe>
+
+
+[slide data-transition="zoomin"]
 #千里之行,始于足下.
 
-[slide]
+[slide data-transition="vertical3d"]
 #THANKS
-
-

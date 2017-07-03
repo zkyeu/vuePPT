@@ -7,7 +7,7 @@ nodeppt - 让你爱上做分享！
 
 **导出pdf不再支持，请使用chrome打印服务另存为pdf，url中添加`?print=1`，然后使用chrome打印 `ctrl+P` **
 
-## 为什么选择nodeppt
+## cd到ppts目录 运行 nodeppt start 即可预览
 
 **这可能是迄今为止最好的网页版演示库**
 

@@ -11,10 +11,9 @@ usemathjax: yes
 
 <small><span class="blue">作业帮-直播课研发团队-教师端  李亮</span></small>
 
-
 <small><span>2017.07.05</span></small>
 
-[slide3]
+[slide]
 ##不学自知，不问自晓，古今行事，未之有也
 ----
 <span class="yellow3">不用学习就知道,不用提问就明白,这种事无论古今都是绝无仅有的.教导我们要勤奋,好学,不懂就问</span>{:&.rollIn}
@@ -440,16 +439,51 @@ created: function () {
 }
 </code></pre>
 
+[slide]
+# 基本语法--路由
 
+[slide]
+<img src="/img/router.png" style="width:600px;margin: 0 auto;">
 
+[slide]
 
+<img src="/img/router.gif" style="width:600px;margin: 0 auto;">
 
+[slide]
+## 语法
 
+<pre><code class="JavaScript">/*引用形式*/
+&lt;router-link to="跳转地址1"&gt;菜单1&lt;/router-link&gt;
+&lt;router-link to="跳转地址2"&gt;菜单2&lt;/router-link&gt;
+/*展现*/
+&lt;router-view&gt;&lt;/router-view&gt;
+</code></pre>
 
+[slide]
+#使用方式
+<pre><code class="JavaScript">/*引用形式*/
+&lt;router-link to="跳转地址1"&gt;菜单1&lt;/router-link&gt;
+&lt;router-link to="跳转地址2"&gt;菜单2&lt;/router-link&gt;
+/*展现*/
+&lt;router-view&gt;&lt;/router-view&gt;
 
-
-
-
+/*全局注册*/
+    var router = new VueRouter({
+        routes : [
+            {
+                path : '跳转地址1',
+                component : 显示的组件名称
+            },
+            {
+                path : '跳转地址2',
+                component : 显示的组件名称
+            },
+            ......
+        ]
+    });
+    /*挂载*/
+    router : router
+</code></pre>
 
 [slide]
 #其他
@@ -457,41 +491,41 @@ created: function () {
 * 过滤器 {:&.zoomIn}
 * 计算属性
 * Vuex
-* Vue-router
 * axios & vue-resource
 * Vue-cli
+* 服务器渲染
+* 单元测试
 * ...
 
-[slide  data-transition="vertical3d"]
+
+[slide]
+#Vue实例1
+<iframe data-src="http://ntrmusic.duapp.com/#/home/newmusic/" src="about:blank;"></iframe>
+[slide]
+#Vue实例2
+<iframe data-src="https://luxroid.com/lianjia/#/" src="about:blank;"></iframe>
+
+
+
+[slide]
 #Vue实例
 ----
-* 豆瓣电影 <span class="example">https://github.com/Recklesslmz/vue-douban.git</span>  {:&.zoomIn}
-* <a href="https://juejin.im/post/58fed39cb123db260cb30587">今日头条</a> <span class="example">https://github.com/hcy1996/vue-toutiao.git</span>
-* <a href="https://zsqio.github.io/vuex-meitu-demo/index.html#/">美图官网</a> <span class="example">https://github.com/zsqio/vue-meitu.git</span>
-* 简书 <span class="example">https://github.com/jiayisheji/jianshu.git</span>
-* <a href="https://luxroid.com/lianjia/#/" target="_blank">链家</a> <span class="example">https://github.com/mixihome/lianjia.git</span>
-* 滴滴出行 <span class="example">https://github.com/uncleze2017/Imitation-DIDI-project.git</span>
-*  <a href="https://yuxiuting.github.io/qqMusic/#/" target="_blank">QQ音乐</a> <span class="example">https://github.com/yuxiuting/Vue-qqMusic.git</span>
-* <a href="http://ntrmusic.duapp.com/#/home/newmusic/" target="_blank">网易云音乐</a> <span class="example">https://github.com/lichddd/ntrmusic.git</span>
-* QQ <span class="example">https://github.com/jiangqizheng/vue2-MiniQQ.git</span>
-* <a href='http://zhaohaodang.com:8888/' target="_blank">微信</a> <span class="example">https://github.com/zhaohaodang/vue-WeChat.git</span>
-* <a href="http://xurenjie.cn:3000/vue-tencent-sports/index.html#/competition/recommend">腾讯体育 <span class="example">https://github.com/renjie1996/tencent-sports.git</span>
-* <a href="https://sukura7.github.io/vue-xianyu-demo/index.html#/">阿里闲鱼 <span class="example">https://github.com/Sukura7/vue-ali-xianyu.git</span>
+* <a href="https://github.com/Recklesslmz/vue-douban.git" target="_blank">豆瓣电影</a>  {:&.zoomIn}
+* <a href="https://juejin.im/post/58fed39cb123db260cb30587" target="_blank">今日头条</a>
+* <a href="https://zsqio.github.io/vuex-meitu-demo/index.html#/" target="_blank">美图官网</a>
+* <a href="https://luxroid.com/lianjia/#/" target="_blank">链家</a>
+* <a href="https://github.com/uncleze2017/Imitation-DIDI-project.git" target="_blank">滴滴出行</a>
+* <a href="https://yuxiuting.github.io/qqMusic/#/" target="_blank">QQ音乐</a>
+* <a href="http://ntrmusic.duapp.com/#/home/newmusic/" target="_blank">网易云音乐</a>
+* <a href="https://github.com/jiangqizheng/vue2-MiniQQ.git" target="_blank">QQ</a>
+* <a href='http://zhaohaodang.com:8888/' target="_blank">微信</a>
+* <a href="https://sukura7.github.io/vue-xianyu-demo/index.html#/" target="_blank">阿里闲鱼</a>
 
 
 [slide]
-## 音乐站实例
-----
-<iframe data-src="http://ntrmusic.duapp.com/#/home/newmusic/" src="about:blank;"></iframe>
+# 千里之行，始于足下。
 
 [slide]
-## 微信实例
-----
-<iframe data-src="http://zhaohaodang.com:8888/" src="about:blank;"></iframe>
+# Thanks
 
 
-[slide data-transition="zoomin"]
-#千里之行,始于足下.
-
-[slide data-transition="vertical3d"]
-#THANKS
